@@ -1,12 +1,9 @@
-body {
-  font-family: sans-serif;
-}
-
 .container {
   width: 80%;
   height: 220px;
   margin: 16px auto;
   overflow: hidden;
+  position: relative;
   /* outline: 8px solid salmon; */
 }
 
@@ -27,4 +24,25 @@ li img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+#prev,
+#next {
+  position: absolute;
+  /* top: 100px; */
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 24px;
+  padding: 0 8px 4px;
+}
+
+#prev {
+  left: 0;
+}
+
+#next {
+  right: 0;
 }
