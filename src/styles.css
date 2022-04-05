@@ -68,13 +68,13 @@ nav {
 }
 
 nav button + button {
-  margin-left: 8px;
+  margin-left: 6px;
 }
 
 nav button {
   border: none;
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   background-color: #ddd;
   border-radius: 50%;
   cursor: pointer;
