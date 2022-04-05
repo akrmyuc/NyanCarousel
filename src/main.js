@@ -29,13 +29,28 @@
   }
 
   function setupDots() {
+    // 画像の数だけボタンを生成する
     for (let i = 0; i < slides.length; i++) {
       const button = document.createElement("button");
+      button.addEventListener("click", () => {
+        currentIndex = i;
+        updateDots();
+        updateButtons();
+        moveSlides();
+      });
       dots.push(button);
       document.querySelector("nav").appendChild(button);
     }
     // 0番目にcurrentクラスをつける
     dots[0].classList.add("current");
+  }
+
+  function updateDots() {
+    dots.forEach((dot) => {
+      dot.classList.remove("current");
+    });
+    // クリックされたボタンにだけcurrentクラスをつける
+    dots[currentIndex].classList.add("current");
   }
 
   updateButtons();
@@ -44,12 +59,14 @@
   next.addEventListener("click", () => {
     currentIndex++;
     updateButtons();
+    updateDots();
     moveSlides();
   });
 
   prev.addEventListener("click", () => {
     currentIndex--;
     updateButtons();
+    updateDots();
     moveSlides();
   });
 }
